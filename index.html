@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiếc Hộp Quà 20/10 Kỹ Thuật Số</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Audio Background -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+        <!-- Fallback: bạn có thể thay bằng link nhạc nền khác -->
+    </audio>
+
+    <!-- Screen 1: Gift Box Landing -->
+    <div id="giftBoxScreen" class="screen active">
+        <div class="gift-box-container">
+            <div class="gift-box" id="giftBox">
+                <div class="box-body"></div>
+                <div class="box-lid">
+                    <div class="ribbon-horizontal"></div>
+                    <div class="ribbon-vertical"></div>
+                    <div class="bow">
+                        <div class="bow-left"></div>
+                        <div class="bow-right"></div>
+                        <div class="bow-center"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gift-message">
+                <h1>Dành riêng cho em ❤️</h1>
+                <p>Bạn có một món quà 20/10. Chạm vào để mở nhé!</p>
+                <div class="click-indicator">👆 Chạm vào đây</div>
+            </div>
+        </div>
+        
+        <!-- Sparkles animation -->
+        <div class="sparkles-container">
+            <div class="sparkle">✨</div>
+            <div class="sparkle">�</div>
+            <div class="sparkle">💫</div>
+            <div class="sparkle">⭐</div>
+        </div>
+    </div>
+
+    <!-- Screen 2: Interactive Content -->
+    <div id="contentScreen" class="screen">
+        <div class="content-container">
+            
+            <!-- Section 1: Flip Cards -->
+            <section class="flip-cards-section">
+                <h2>Những lý do khiến em thật đặc biệt</h2>
+                <div class="flip-cards-grid">
+                    <div class="flip-card" data-message="Vì năng lượng tích cực của em ☀️">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">❤️</div>
+                            <div class="flip-card-back">Vì năng lượng tích cực của em ☀️</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" data-message="Vì em luôn kiên nhẫn và dịu dàng 🌸">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">💖</div>
+                            <div class="flip-card-back">Vì em luôn kiên nhẫn và dịu dàng 🌸</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" data-message="Vì em là nguồn động lực của anh 💪">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">💗</div>
+                            <div class="flip-card-back">Vì em là nguồn động lực của anh 💪</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" data-message="Vì em làm cuộc sống anh ý nghĩa hơn ✨">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">💝</div>
+                            <div class="flip-card-back">Vì em làm cuộc sống anh ý nghĩa hơn ✨</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Photo Stack -->
+            <section class="photo-stack-section">
+                <h2>Khoảnh khắc của chúng ta</h2>
+                <div class="photo-stack" id="photoStack">
+                    <div class="photo" data-caption="16/7 - Ngày chúng mình tìm thấy nhau giữa thế giới 💕">
+                        <div class="photo-frame">
+                            <img src="images/memory1.jpg" alt="Memory 1" class="photo-content">
+                            <div class="photo-caption">16/7 - Ngày chúng mình tìm thấy nhau giữa thế giới 💕</div>
+                        </div>
+                    </div>
+                    <div class="photo" data-caption="5/8 - Ngày chúng mình chính thức tìm hiểu nhau 💖">
+                        <div class="photo-frame">
+                            <img src="images/memory2.jpg" alt="Memory 2" class="photo-content">
+                            <div class="photo-caption">5/8 - Ngày chúng mình chính thức tìm hiểu nhau 💖</div>
+                        </div>
+                    </div>
+                    <div class="photo" data-caption="18/8 - Món quà đầu tiên trong đời mà Anh được nhận �">
+                        <div class="photo-frame">
+                            <img src="images/memory3.jpg" alt="Memory 3" class="photo-content">
+                            <div class="photo-caption">18/8 - Món quà đầu tiên trong đời mà Anh được nhận 🎁</div>
+                        </div>
+                    </div>
+                    <div class="photo" data-caption="Ăn bánh trung thu do em làm cho 🥮">
+                        <div class="photo-frame">
+                            <img src="images/memory4.jpg" alt="Memory 4" class="photo-content">
+                            <div class="photo-caption">Ăn bánh trung thu do em làm cho 🥮</div>
+                        </div>
+                    </div>
+                    <div class="photo" data-caption="Con Sứa 🎀">
+                        <div class="photo-frame">
+                            <img src="images/memory5.jpg" alt="Memory 5" class="photo-content">
+                            <div class="photo-caption">Con Sứa 🎀</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="photo-instruction">Chạm vào ảnh để xem từng kỷ niệm!</p>
+            </section>
+
+            <!-- Section 3: Final Letter -->
+            <section class="final-letter-section">
+                <h2>Lời chúc từ trái tim</h2>
+                <div class="letter-container">
+                    <div class="letter-envelope" id="letterEnvelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body"></div>
+                        <div class="envelope-seal">�</div>
+                    </div>
+                    <div class="letter-content" id="letterContent">
+                        <div class="letter-paper">
+                            <h3>Gửi em yêu của anh,</h3>
+                            <p>Nhân ngày 20/10 - Ngày Phụ nữ Việt Nam, anh muốn gửi đến em những lời chúc tốt đẹp nhất.</p>
+                            <p>Em là người phụ nữ tuyệt vời nhất mà anh từng gặp. Với em, mọi ngày đều trở nên ý nghĩa và tràn đầy hạnh phúc.</p>
+                            <p>Anh chúc em luôn xinh đẹp, khỏe mạnh, thành công trong công việc và mãi mãi giữ được nụ cười rạng rỡ đó.</p>
+                            <p>Cảm ơn em vì đã đến bên anh và làm cuộc sống này thật ý nghĩa.</p>
+                            <div class="letter-signature">
+                                Yêu em nhiều,<br>
+                                <span class="signature">❤️ Anhcctk ❤️</span>
+                            </div>
+                            <div class="letter-date">20/10/2025</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="letter-instruction" id="letterInstruction">Chạm vào thư để mở!</p>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Floating elements -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
